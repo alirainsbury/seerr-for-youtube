@@ -1,0 +1,162 @@
+:root {
+  --bg: #ffffff;
+  --surface: rgba(0, 0, 0, 0.05);
+  --surface-hover: rgba(0, 0, 0, 0.1);
+  --line: rgba(0, 0, 0, 0.1);
+  --text: #0f0f0f;
+  --text-2: #606060;
+  --accent: #4f46e5;
+  --ok: #22c55e;
+  --seerr: linear-gradient(to bottom right, #4f46e5, #9333ea);
+  --error: #cc0000;
+  --plex: #e5a00d;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0f;
+    --surface: rgba(255, 255, 255, 0.1);
+    --surface-hover: rgba(255, 255, 255, 0.2);
+    --line: rgba(255, 255, 255, 0.15);
+    --text: #f1f1f1;
+    --text-2: #aaaaaa;
+    --accent: #818cf8;
+    --error: #ff4e45;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 14px/20px "Roboto", "Arial", sans-serif;
+}
+main { max-width: 520px; margin: 0 auto; padding: 56px 24px 64px; }
+header { display: flex; gap: 16px; align-items: center; margin-bottom: 40px; }
+header img { border-radius: 10px; flex: none; }
+h1 { margin: 0; font-size: 20px; line-height: 28px; font-weight: 700; }
+h2 { margin: 0; font-size: 16px; line-height: 22px; font-weight: 500; }
+.lede { margin: 2px 0 0; color: var(--text-2); }
+
+.step { margin-bottom: 32px; }
+.step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--seerr); color: #fff;
+  font-size: 12px; font-weight: 700;
+}
+
+label { display: block; font-weight: 500; margin-bottom: 8px; }
+.row { display: flex; gap: 8px; }
+input[type="url"], input[type="text"], input[type="password"] {
+  flex: 1; min-width: 0;
+  height: 40px; padding: 0 14px;
+  border: 1px solid transparent; border-radius: 8px;
+  background: var(--surface); color: var(--text);
+  font: inherit; outline: none;
+}
+input:focus { border-color: var(--accent); }
+.help { margin: 8px 0 0; font-size: 12px; line-height: 18px; color: var(--text-2); }
+.status { margin: 12px 0 0; min-height: 20px; color: var(--text-2); display: flex; align-items: center; gap: 8px; }
+.status:empty { display: none; }
+.status.ok { color: var(--ok); }
+.status.error { color: var(--error); }
+
+button {
+  height: 40px; padding: 0 18px;
+  border: 0; border-radius: 20px;
+  font: 500 14px "Roboto", "Arial", sans-serif;
+  cursor: pointer; white-space: nowrap; flex: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+button:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+button:disabled { opacity: 0.5; cursor: default; }
+.primary { background: var(--seerr); color: #fff; box-shadow: inset 0 0 0 1px #6366f1; }
+.primary:hover:not(:disabled) { filter: brightness(1.12); }
+.plex { background: var(--plex); color: #1f1f1f; }
+.plex:hover:not(:disabled) { filter: brightness(1.06); }
+.ghost { background: var(--surface); color: var(--text); }
+.ghost:hover:not(:disabled) { background: var(--surface-hover); }
+.link {
+  height: 40px; padding: 0 12px; background: transparent; color: var(--accent);
+}
+.link:hover { background: var(--surface); }
+
+/* Server summary */
+.server {
+  display: flex; align-items: center; gap: 12px;
+  padding-block: 12px;
+  padding-inline: 16px 12px;
+  border: 1px solid var(--line); border-radius: 12px;
+  margin-bottom: 24px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); flex: none; }
+.server-text { flex: 1; min-width: 0; }
+.server-title { font-weight: 500; }
+.server-url { font-size: 12px; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Account */
+.signin p { margin: 4px 0 16px; color: var(--text-2); }
+.signin .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.who { display: flex; align-items: center; gap: 14px; }
+.avatar {
+  width: 48px; height: 48px; border-radius: 50%; flex: none; object-fit: cover;
+  background: var(--surface);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 500;
+}
+.who-text { flex: 1; min-width: 0; }
+.who-name { font-size: 16px; line-height: 22px; font-weight: 500; }
+.who-sub { font-size: 12px; color: var(--text-2); }
+.done {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  margin-top: 20px; padding: 16px;
+  border-radius: 12px; background: var(--surface);
+}
+.done-text { flex: 1; min-width: 220px; }
+.done strong { font-weight: 500; }
+.done p { margin: 2px 0 0; color: var(--text-2); }
+
+.spin {
+  width: 16px; height: 16px; flex: none;
+  border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%;
+  animation: rot 0.8s linear infinite; opacity: 0.7;
+}
+@keyframes rot { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation-duration: 2s; } }
+
+/* Preferences */
+.toggle { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; cursor: pointer; }
+.toggle input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--text); flex: none; }
+.toggle-text { display: flex; flex-direction: column; }
+.toggle-text .help { margin-top: 2px; }
+
+/* Language */
+.lang-pref { margin-top: 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+select {
+  height: 40px; min-width: 240px; padding: 0 12px;
+  border: 1px solid transparent; border-radius: 8px;
+  background: var(--surface); color: var(--text); font: inherit;
+}
+select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Korean and Arabic need fonts that have their letters. */
+:lang(ko) body, :lang(ko) button, :lang(ko) input, :lang(ko) select {
+  font-family: "Roboto", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  word-break: keep-all;
+}
+:lang(ja) body, :lang(ja) button, :lang(ja) input, :lang(ja) select {
+  font-family: "Roboto", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+  line-break: strict;
+}
+:lang(ar) body, :lang(ar) button, :lang(ar) input, :lang(ar) select {
+  font-family: "Noto Sans Arabic", "Segoe UI", "Tahoma", "Geeza Pro", sans-serif;
+}
+:lang(ar) .help, :lang(ar) .lede { line-height: 22px; }
+
+/* Addresses and emails stay left-to-right, but line up with the text around them. */
+[dir="rtl"] .server-url, [dir="rtl"] .who-sub { text-align: right; }

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seerr for YouTube</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <!-- Text is filled in from i18n.js: data-i18n sets the text, data-i18n-placeholder the placeholder. -->
+  <main>
+    <header>
+      <img src="icons/48.png" width="40" height="40" alt="">
+      <div>
+        <h1 data-i18n="extName"></h1>
+        <p class="lede" data-i18n="tagline"></p>
+      </div>
+    </header>
+
+    <!-- Step 1: server address -->
+    <section id="step-server" class="step" hidden>
+      <div class="step-head">
+        <span class="step-num" aria-hidden="true">1</span>
+        <h2 data-i18n="step1_title"></h2>
+      </div>
+      <form id="server-form" novalidate>
+        <label for="url" data-i18n="address_label"></label>
+        <div class="row">
+          <input id="url" type="text" inputmode="url" dir="ltr" placeholder="seerr.example.com" autocomplete="url" spellcheck="false" autocapitalize="off" autofocus>
+          <button id="continue" type="submit" class="primary" data-i18n="continue"></button>
+        </div>
+        <p class="help" data-i18n="address_help"></p>
+        <p id="server-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Server summary + step 2: account -->
+    <section id="step-account" class="step" hidden>
+      <div class="server">
+        <span class="dot" aria-hidden="true"></span>
+        <div class="server-text">
+          <div id="server-title" class="server-title"></div>
+          <div id="server-url" class="server-url" dir="ltr"></div>
+        </div>
+        <button id="change-server" type="button" class="ghost" data-i18n="change"></button>
+      </div>
+
+      <div id="account" aria-live="polite"></div>
+    </section>
+
+    <!-- Preferences -->
+    <section id="prefs" class="step" hidden>
+      <label class="toggle">
+        <input id="trailersOnly" type="checkbox">
+        <span class="toggle-text">
+          <span data-i18n="pref_trailers"></span>
+          <span class="help" data-i18n="pref_trailers_help"></span>
+        </span>
+      </label>
+    </section>
+
+    <!-- Always visible, so the page can be switched to a readable language before setup. -->
+    <section class="step lang-pref">
+      <label for="language" data-i18n="pref_language"></label>
+      <select id="language"></select>
+    </section>
+  </main>
+  <script src="net.js"></script>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
