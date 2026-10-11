@@ -8,7 +8,8 @@
     "storage"
   ],
   "optional_host_permissions": [
-    "https://*/*"
+    "https://*/*",
+    "http://*/*"
   ],
   "background": {
     "service_worker": "background.js"

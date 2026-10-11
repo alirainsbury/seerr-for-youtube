@@ -4,7 +4,7 @@
 //
 // Auth: the extension uses the person's own Seerr session (the same cookie Seerr's website uses),
 // created by signing in with Plex or on the Seerr site. It never holds a password or API key.
-// Seerr is only ever reached at its https web address.
+// Seerr is reached at its web address: https or plain http, domain name or IP (fork change).
 
 importScripts('net.js');
 const { isAllowedServer, originPattern } = self.SeerrNet;
@@ -14,7 +14,7 @@ const EXTENSION_BASE = chrome.runtime.getURL(''); // "chrome-extension://<id>/"
 const YOUTUBE_ORIGIN = 'https://www.youtube.com';
 const PLEX_PRODUCT = 'Seerr for YouTube';
 const PLEX_WINDOW = { width: 600, height: 720 };
-const RECONNECT = 'Seerr for YouTube now connects only through your Seerr’s https web address. Open settings and enter it, like seerr.example.com.';
+const RECONNECT = 'The saved Seerr address isn’t valid. Open settings and enter it again, like seerr.example.com or http://10.0.1.11:5055.';
 
 // Errors carry a code (+ params) that the YouTube side and settings page translate; the English
 // message is only a fallback. "detail" is Seerr's own error text, shown as-is.

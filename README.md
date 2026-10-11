@@ -5,6 +5,9 @@
 [![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-6366f1)](#)
 [![Chrome Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4)](#installation)
 
+> [!NOTE]
+> **This is a personal fork.** Based on [Seerr for YouTube](https://github.com/nigoshi/seerr-for-youtube) by Nigoshi, licensed under CC BY-NC 4.0. Changes were made: the Seerr address may be plain `http://` and an IP address (for example `http://10.0.1.11:5055`), not only an https domain name. This trades the upstream "sign-ins never travel unencrypted" guarantee for LAN convenience; only use http on a network you trust.
+
 **Watching a trailer on YouTube? Request it on your Seerr server in one click.**
 
 Seerr for YouTube is a Chrome extension that adds a **Request** button next to YouTube's Subscribe button. It works out which movie or show the trailer is for, shows whether it's already on your server, and lets you request it, picking seasons for shows, without ever leaving YouTube.
@@ -87,7 +90,7 @@ The interface follows Chrome's language automatically. You can change it under *
 ## Requirements
 
 - **Google Chrome**, or another Chromium-based browser such as Edge, Brave, Opera or Vivaldi.
-- **A Seerr server reached through an https domain address**, like `seerr.example.com`. IP addresses and plain `http://` aren't supported, so that sign-ins are never sent unencrypted.
+- **A Seerr server you can reach from this machine**, like `seerr.example.com` or `http://10.0.1.11:5055`. This fork accepts plain `http://` and IP addresses as well as https domain names (upstream is https-only).
 - **An account on that Seerr server**: Plex, or a Jellyfin, Emby or local Seerr account.
 
 > Built for [Seerr](https://github.com/seerr-team/seerr). Overseerr and Jellyseerr share the same API and may work, but they haven't been tested.
