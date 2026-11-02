@@ -10,7 +10,7 @@ seerr-for-youtube/
 │   ├── content.js        The button and popover on YouTube
 │   ├── match.js          Reads trailer titles, detects game trailers, ranks matches
 │   ├── i18n.js           All interface text (English, Japanese, Korean, Arabic)
-│   ├── net.js            Address checks (https domain addresses only)
+│   ├── net.js            Address checks (https or http; domain name or IP)
 │   ├── styles.js         Button and popover styles
 │   ├── options.html/css/js  Settings page
 │   ├── icons/            Extension icons

@@ -8,4 +8,4 @@
 - **No passwords or API keys are stored.** The extension uses your normal Seerr sign-in, the same one Seerr's website uses. Your Plex sign-in token is handed to Seerr once and never saved.
 - **Minimal permissions.** Chrome only grants access to your exact Seerr address, plus plex.tv and image.tmdb.org. Access is requested when you connect, not at install.
 - **Isolated from YouTube.** The button and popover are sealed off from YouTube's page scripts, which can't read your name, server address or library, and can't press **Request** for you.
-- **https only.** The extension refuses unencrypted addresses, so sign-ins never travel in plain text.
+- **https recommended.** This fork also accepts a plain `http://` address or an IP (for a Seerr server on your LAN). Over http, sign-ins travel unencrypted, so use http only on a network you trust.
