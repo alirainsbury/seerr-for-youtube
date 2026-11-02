@@ -18,5 +18,5 @@ The source code is open for anyone to read, use, copy and modify, as long as the
 🚫 **You may not use it for profit**
 - Neither this project nor anything made from it may be used commercially: no selling it, no paid versions, no including it in paid products or services, no ads or monetisation built on it.
 
-These conditions also apply to every project based on this one. The full legal text is in [LICENSE](LICENSE) and is what applies; this summary is just a plain-language guide.
+These conditions also apply to every project based on this one. The full legal text is in [LICENSE](../LICENSE) and is what applies; this summary is just a plain-language guide.
 
